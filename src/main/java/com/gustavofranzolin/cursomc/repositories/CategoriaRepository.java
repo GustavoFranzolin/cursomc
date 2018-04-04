@@ -5,8 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.gustavofranzolin.cursomc.domain.Categoria;
 
-// Um objeto do tipo CategoriaRepository vai ser possível que faça consultas, como inserir, deletar
+// Um objeto do tipo CategoriaRepository vai ser possível que faça consultas, como inserir, deletar referentes ao objeto Categoria
 // na tabela de dados Categoria
+// A anotação Repository permite que a CategoriaRepository faça as manipulações no banco de dados
+// JpaRepository capaz de acessar os dados Categoria, Integer é o tipo do atributo identificador do objeto
+
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
 	
