@@ -24,15 +24,18 @@ public class CursomcApplication implements CommandLineRunner {
 
 	@Autowired
 private	CategoriaRepository categoriaRepository;
-	
-
 	@Autowired
 private ProdutoRepository produtoRepository;	
+	
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);
 	}
 
+	// Aqui estão todas instancias do objetos e das Listas para efeito de teste.
+	// Como está no mapeamento objeto-objeto
+	
+	
 	@Override
 	public void run(String... args) throws Exception {
 			Categoria cat1 = new Categoria(null, "Informatica");

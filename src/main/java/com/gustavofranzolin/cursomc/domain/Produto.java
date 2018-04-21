@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 
 @Entity
@@ -25,7 +27,20 @@ public class Produto implements Serializable{
 	private String nome;
 	private Double preco;
 	
+	
+	/*
+	Na associação muitos para muitos, tem uma terceira tabela
+		NO JPA é preciso da anotação ManyToMany para fazer a associação entre as tabelas
+		name é o name é o nome da tabela criada PRODUTO_CATEGORIA
+		joinColums é a primeira coluna da tabela. produto_id ( a chave estrangeira correspondente ao produto )
+		inverseJoinColuns é segunda coluna da tabela. categoria_id ( a chave estrangeira correspondente a categoria )
 
+	*/
+	
+	// @Json
+
+	
+	@JsonBackReference
 	@ManyToMany
 	@JoinTable(name = "PRODUTO_CATEGORIA",
 			joinColumns = @JoinColumn(name="produto_id"),

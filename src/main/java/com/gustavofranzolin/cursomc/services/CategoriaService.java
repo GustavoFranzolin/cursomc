@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.gustavofranzolin.cursomc.domain.Categoria;
 import com.gustavofranzolin.cursomc.repositories.CategoriaRepository;
+import com.gustavofranzolin.cursomc.services.exceptions.ObjectNotFoundException;
 
 //Service - implementação do serviço
 //Dependencia de um objeto CategoriaRepository
@@ -21,6 +22,14 @@ public class CategoriaService {
 	public Categoria buscar(Integer id) {
 		
 		Categoria obj = repo.findOne(id);
+		
+			if(obj==null) {
+					
+				throw new ObjectNotFoundException("Objeto não encontrado!! Id:  " + id
+						
+						+ ", Tipo: " + Categoria.class.getName());
+				
+			}
 		
 		return obj;
 		
