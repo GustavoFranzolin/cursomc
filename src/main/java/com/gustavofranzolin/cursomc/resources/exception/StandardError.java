@@ -2,12 +2,17 @@ package com.gustavofranzolin.cursomc.resources.exception;
 
 import java.io.Serializable;
 
+
+// Objeto do erro
 public class StandardError implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	// o status HTTP do erro
 	private Integer status;
+	// Mensagem do erro
 	private String msg;
+	// O instante que aconteceu o erro
 	private Long timeStamp;
 	
 	public StandardError(Integer status, String msg, Long timeStamp) {

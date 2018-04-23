@@ -18,7 +18,10 @@ public class CategoriaService {
 	@Autowired
 	private CategoriaRepository repo;
 	
+
 	
+	
+	// Lançamento de exceção na camada serviço
 	public Categoria buscar(Integer id) {
 		
 		Categoria obj = repo.findOne(id);
